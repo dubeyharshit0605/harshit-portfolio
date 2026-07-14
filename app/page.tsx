@@ -17,8 +17,8 @@ export default function Home() {
           HD<span className="brand-dot">.</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
           <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
         <a className="header-cta" href={links.email}>Let&apos;s talk <Arrow /></a>
@@ -34,16 +34,34 @@ export default function Home() {
             production-ready products.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            <a className="button button-primary" href="#experience">View experience <span aria-hidden="true">↓</span></a>
             <a className="button button-secondary" href="/harshit-dubey-resume.pdf" target="_blank">View résumé <Arrow /></a>
           </div>
         </div>
+      </section>
 
+      <section className="section experience-section" id="experience">
+        <div className="section-heading">
+          <span className="section-number">01</span>
+          <div><p className="kicker">Work experience</p><h2>I turn complex ideas<br />into clear outcomes.</h2></div>
+        </div>
+        <div className="timeline">
+          <article>
+            <div className="timeline-date">JUN 2026 — PRESENT</div>
+            <div><h3>Technical Content Writer</h3><p className="company">takeuforward · Remote</p></div>
+            <p>Developed and optimized 200+ DSA articles and editorials, partnering with mentors and developers on technical accuracy while improving discoverability through SEO.</p>
+          </article>
+          <article>
+            <div className="timeline-date">MAY — JUN 2026</div>
+            <div><h3>Problem Setter</h3><p className="company">AskSenior · Remote</p></div>
+            <p>Authored ICPC-style problems, reference solutions, hidden tests, and editorials. Used brute-force verification, stress testing, and custom generators to eliminate unintended solutions.</p>
+          </article>
+        </div>
       </section>
 
       <section className="section work-section" id="work">
         <div className="section-heading">
-          <span className="section-number">01</span>
+          <span className="section-number">02</span>
           <div><p className="kicker">Selected work</p><h2>Systems with a reason to exist.</h2></div>
         </div>
 
@@ -103,25 +121,6 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="section experience-section" id="experience">
-        <div className="section-heading">
-          <span className="section-number">02</span>
-          <div><p className="kicker">Experience</p><h2>Engineering clarity at scale.</h2></div>
-        </div>
-        <div className="timeline">
-          <article>
-            <div className="timeline-date">JUN 2026 — PRESENT</div>
-            <div><h3>Technical Content Writer</h3><p className="company">takeuforward · Remote</p></div>
-            <p>Developed and optimized 200+ DSA articles and editorials, partnering with mentors and developers on technical accuracy while improving discoverability through SEO.</p>
-          </article>
-          <article>
-            <div className="timeline-date">MAY — JUN 2026</div>
-            <div><h3>Problem Setter</h3><p className="company">AskSenior · Remote</p></div>
-            <p>Authored ICPC-style problems, reference solutions, hidden tests, and editorials. Used brute-force verification, stress testing, and custom generators to eliminate unintended solutions.</p>
-          </article>
-        </div>
-      </section>
-
       <section className="section about-section" id="about">
         <div className="section-heading">
           <span className="section-number">03</span>
@@ -145,7 +144,7 @@ export default function Home() {
         <div className="signal-grid">
           <a href={links.codeforces} target="_blank" rel="noreferrer"><span>Codeforces</span><strong>Specialist · 1443</strong><Arrow /></a>
           <a href={links.codechef} target="_blank" rel="noreferrer"><span>CodeChef</span><strong>4 Star · 1813</strong><Arrow /></a>
-          <a href={links.leetcode} target="_blank" rel="noreferrer"><span>LeetCode</span><strong>1600+ · Top 25%</strong><Arrow /></a>
+          <a href={links.leetcode} target="_blank" rel="noreferrer"><span>LeetCode</span><strong>Knight · 1850+</strong><Arrow /></a>
         </div>
       </section>
 
