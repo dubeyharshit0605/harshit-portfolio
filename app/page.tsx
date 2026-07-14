@@ -39,12 +39,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="proof-grid" aria-label="Selected highlights">
-          <article><strong>200+</strong><span>technical articles shipped</span></article>
-          <article><strong>400+</strong><span>algorithmic problems solved</span></article>
-          <article><strong>10×</strong><span>faster cube state exploration</span></article>
-          <article><strong>Top 6%</strong><span>Meta Hacker Cup 2024</span></article>
-        </div>
       </section>
 
       <section className="section work-section" id="work">
