@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 const links = {
   email: "mailto:dubeyharshit0605@gmail.com",
   github: "https://github.com/dubeyharshit0605",
@@ -10,8 +14,29 @@ const links = {
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
+  useEffect(() => {
+    const root = document.documentElement;
+    const move = (event: PointerEvent) => {
+      root.style.setProperty("--mx", `${event.clientX}px`);
+      root.style.setProperty("--my", `${event.clientY}px`);
+    };
+    const scroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      root.style.setProperty("--scroll", `${max > 0 ? window.scrollY / max : 0}`);
+    };
+    window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("scroll", scroll, { passive: true });
+    scroll();
+    return () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("scroll", scroll);
+    };
+  }, []);
+
   return (
     <main>
+      <div className="scroll-progress" aria-hidden="true" />
+      <div className="cursor-glow" aria-hidden="true" />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Harshit Dubey, home">
           HD<span className="brand-dot">.</span>
@@ -26,7 +51,10 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="eyebrow"><span className="status-dot" /> Open to SDE &amp; AI engineering opportunities</div>
-        <h1>I build AI products<br />and reliable systems<span className="accent">.</span></h1>
+        <h1>I build <span className="neon-word">AI products</span><br />that actually <span className="outline-word">ship.</span></h1>
+        <div className="hero-orbit" aria-hidden="true">
+          <span>AGENTIC AI</span><span>BACKEND</span><span>ALGORITHMS</span>
+        </div>
         <div className="hero-bottom">
           <p>
             I&apos;m <strong>Harshit Dubey</strong>, a software engineer focused on backend systems,
@@ -40,7 +68,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section experience-section" id="experience">
+      <div className="marquee" aria-label="Engineering focus areas">
+        <div>
+          <span>BUILD FAST</span><i>✦</i><span>THINK DEEP</span><i>✦</i><span>SHIP RELIABLE</span><i>✦</i><span>AUTOMATE THE BORING</span><i>✦</i>
+          <span>BUILD FAST</span><i>✦</i><span>THINK DEEP</span><i>✦</i><span>SHIP RELIABLE</span><i>✦</i><span>AUTOMATE THE BORING</span><i>✦</i>
+        </div>
+      </div>
+
+      <section className="section experience-section reveal" id="experience">
         <div className="section-heading">
           <span className="section-number">01</span>
           <div><p className="kicker">Work experience</p><h2>I turn complex ideas<br />into clear outcomes.</h2></div>
@@ -59,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section work-section" id="work">
+      <section className="section work-section reveal" id="work">
         <div className="section-heading">
           <span className="section-number">02</span>
           <div><p className="kicker">Selected work</p><h2>Systems with a reason to exist.</h2></div>
@@ -121,7 +156,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="section about-section" id="about">
+      <section className="section about-section reveal" id="about">
         <div className="section-heading">
           <span className="section-number">03</span>
           <div><p className="kicker">About</p><h2>Curious by default.<br />Rigorous by practice.</h2></div>
@@ -139,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section signal-section">
+      <section className="section signal-section reveal">
         <p className="kicker">Problem-solving signal</p>
         <div className="signal-grid">
           <a href={links.codeforces} target="_blank" rel="noreferrer"><span>Codeforces</span><strong>Specialist · 1443</strong><Arrow /></a>
