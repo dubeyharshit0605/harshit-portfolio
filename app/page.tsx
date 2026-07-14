@@ -177,8 +177,8 @@ export default function Home() {
       <section className="section signal-section reveal">
         <p className="kicker">Problem-solving signal</p>
         <div className="signal-grid">
-          <a href={links.codeforces} target="_blank" rel="noreferrer"><span>Codeforces</span><strong>Specialist · 1443</strong><Arrow /></a>
-          <a href={links.codechef} target="_blank" rel="noreferrer"><span>CodeChef</span><strong>4 Star · 1813</strong><Arrow /></a>
+          <a href={links.codeforces} target="_blank" rel="noreferrer"><span>Codeforces</span><strong>Specialist · 1400+</strong><Arrow /></a>
+          <a href={links.codechef} target="_blank" rel="noreferrer"><span>CodeChef</span><strong>4 Star · 1800+</strong><Arrow /></a>
           <a href={links.leetcode} target="_blank" rel="noreferrer"><span>LeetCode</span><strong>Knight · 1850+</strong><Arrow /></a>
         </div>
       </section>
